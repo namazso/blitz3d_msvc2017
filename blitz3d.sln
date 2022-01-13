@@ -51,6 +51,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibPNG", "freeimage\LibPNG\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibJPEG", "freeimage\LibJPEG\LibJPEG.vcxproj", "{4D936323-B459-429E-B192-39B9290E3883}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bbruntime_ldr", "bbruntime_ldr\bbruntime_ldr.vcxproj", "{A2FD7017-B772-4FA8-A2F0-097D072EC316}"
+	ProjectSection(ProjectDependencies) = postProject
+		{41785D5A-2FD3-43A2-9469-F5D9CF927E1D} = {41785D5A-2FD3-43A2-9469-F5D9CF927E1D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -125,6 +130,10 @@ Global
 		{4D936323-B459-429E-B192-39B9290E3883}.Debug|x86.Build.0 = Debug|Win32
 		{4D936323-B459-429E-B192-39B9290E3883}.Release|x86.ActiveCfg = Release|Win32
 		{4D936323-B459-429E-B192-39B9290E3883}.Release|x86.Build.0 = Release|Win32
+		{A2FD7017-B772-4FA8-A2F0-097D072EC316}.Debug|x86.ActiveCfg = Debug|Win32
+		{A2FD7017-B772-4FA8-A2F0-097D072EC316}.Debug|x86.Build.0 = Debug|Win32
+		{A2FD7017-B772-4FA8-A2F0-097D072EC316}.Release|x86.ActiveCfg = Release|Win32
+		{A2FD7017-B772-4FA8-A2F0-097D072EC316}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

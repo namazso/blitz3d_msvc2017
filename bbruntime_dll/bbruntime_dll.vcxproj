@@ -94,6 +94,7 @@
       <ImportLibrary>.\Debug\runtime.lib</ImportLibrary>
       <AdditionalOptions> /FIXED:NO</AdditionalOptions>
       <AdditionalDependencies>wsock32.lib;amstrmid.lib;winmm.lib;dxguid.lib;ddraw.lib;dsound.lib;dinput8.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -153,6 +154,7 @@
       <OutputFile>..\_release\bin\runtime.dll</OutputFile>
       <ImportLibrary>.\Release\runtime.lib</ImportLibrary>
       <AdditionalDependencies>wsock32.lib;amstrmid.lib;winmm.lib;dxguid.lib;ddraw.lib;dsound.lib;dinput8.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -201,6 +203,9 @@
       <Project>{ec04d125-90b0-495f-a0db-367dc6215e42}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
