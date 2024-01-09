@@ -621,7 +621,7 @@ void Editor::en_msgfilter( NMHDR *nmhdr,LRESULT *result ){
 
 		edit->TrackPopupMenu( TPM_LEFTALIGN,p.x,p.y,blitzIDE.mainFrame );
 
-	}else if( msg->msg==WM_CHAR ){
+	}else if( msg->msg==WM_KEYDOWN ){
 		if( msg->wParam=='\t' ){
 			int lineStart=editCtrl.LineFromChar( selStart );
 			int lineEnd=editCtrl.LineFromChar( selEnd );

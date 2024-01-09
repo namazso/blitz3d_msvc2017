@@ -29,11 +29,6 @@ void PixelFormat::setFormat( const DDPIXELFORMAT &pf ){
 		VirtualFree( plot_code,0,MEM_RELEASE );
 	}
 
-	if( !(pf.dwFlags & DDPF_RGB) ){
-		memset( this,0,sizeof(*this) );
-		return;
-	}
-
 	plot_code=(char*)VirtualAlloc( 0,128,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE );
 	point_code=plot_code+64;
 
