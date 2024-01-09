@@ -37,6 +37,8 @@ bool input_destroy(){
 }
 
 int bbKeyDown( int n ){
+	if (n == 1) // hack around bad usage
+		return GetAsyncKeyState(VK_ESCAPE) < 0;
 	return gx_keyboard->keyDown( n );
 }
 
