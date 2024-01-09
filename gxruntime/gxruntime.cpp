@@ -880,12 +880,15 @@ gxGraphics *gxRuntime::openGraphics( int w,int h,int d,int driver,int flags ){
 			gfx_mode=(flags & gxGraphics::GRAPHICS_SCALED) ? 1 : 2;
 			auto_suspend=(flags & gxGraphics::GRAPHICS_AUTOSUSPEND) ? true : false;
 			int ws,ww,hh;
+			int screenw = GetSystemMetrics(SM_CXSCREEN);
+			int screenh = GetSystemMetrics(SM_CYSCREEN);
 			if( gfx_mode==1 ){
 				ws=scaled_ws;
-				RECT c_r;
-				GetClientRect( hwnd,&c_r );
-				ww=c_r.right-c_r.left;
-				hh=c_r.bottom-c_r.top;
+				int scale = 1;
+				while ((scale + 1) * w < screenw && (scale + 1) * h < screenh)
+					++scale;
+				ww = w * scale;
+				hh = h * scale;
 			}else{
 				ws=static_ws;
 				ww=w;
@@ -900,8 +903,8 @@ gxGraphics *gxRuntime::openGraphics( int w,int h,int d,int driver,int flags ){
 			GetClientRect( hwnd,&c_r );
 			int tw=(w_r.right-w_r.left)-(c_r.right-c_r.left);
 			int th=(w_r.bottom-w_r.top)-(c_r.bottom-c_r.top );
-			int cx=( GetSystemMetrics( SM_CXSCREEN )-ww )/2;
-			int cy=( GetSystemMetrics( SM_CYSCREEN )-hh )/2;
+			int cx=( screenw-ww )/2;
+			int cy=( screenh-hh )/2;
 			POINT zz={0,0};
 			ClientToScreen( hwnd,&zz );
 			int bw=zz.x-w_r.left,bh=zz.y-w_r.top;
